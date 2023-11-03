@@ -269,7 +269,7 @@
     </div>
 
     <div class="toast-container" id="toast-container"></div>
-    <script>
+    <!-- <script>
         function getRandomName() {
             const names = [
                 "Aarav", "Aarti", "Abhinav", "Abhishek", "Aditi", "Aditya", "Aishwarya", "Ajay", "Akshay", "Aman", "Ambika", "Amit", "Amrita", "Anand", "Ananya", "Aniket", "Anjali", "Ankita", "Anurag", "Aparna",
@@ -348,9 +348,101 @@
         
         }
 
-        setInterval(createToast, Math.floor(Math.random() * (10000 - 1000 + 1) + 1000));
+        setInterval(createToast, 1000);
 
+    </script> -->
+
+    <script>
+        function getRandomName() {
+            const names = [
+                "Aarav", "Aarti", "Abhinav", "Abhishek", "Aditi", "Aditya", "Aishwarya", "Ajay", "Akshay", "Aman", "Ambika", "Amit", "Amrita", "Anand", "Ananya", "Aniket", "Anjali", "Ankita", "Anurag", "Aparna",
+                "Arjun", "Arun", "Asha", "Ashish", "Ashwini", "Asif", "Ayush", "Bhavesh", "Bhuvan", "Chetan", "Chitra", "Deepak", "Disha", "Divya", "Gaurav", "Geeta", "Gopal", "Gouri", "Harish", "Harsha",
+                "Isha", "Jagdish", "Jaya", "Jayesh", "Kajal", "Kalyani", "Kapil", "Karan", "Karishma", "Kavita", "Kiran", "Kirti", "Komal", "Kunal", "Lakshmi", "Madhav", "Madhu", "Manish", "Meera", "Mira",
+                "Mohan", "Monica", "Mukesh", "Nandini", "Naveen", "Neelam", "Neha", "Nikita", "Nisha", "Pankaj", "Parul", "Pooja", "Pradeep", "Pranav", "Prashant", "Priya", "Rahul", "Rajesh", "Rakesh",
+                "Ramesh", "Rashmi", "Ravi", "Rekha", "Renu", "Rishi", "Ritu", "Rupali", "Sachin", "Sangeeta", "Sanjay", "Sarita", "Satish", "Seema", "Shalini", "Shamita", "Shankar", "Shanti", "Shashi",
+                "Shivani", "Shruti", "Shweta", "Siddharth", "Simran", "Sneha", "Sonia", "Suman", "Sunil", "Suresh", "Swati", "Tanvi", "Tarun", "Trisha", "Uday", "Usha", "Varun", "Vasu", "Vicky", "Vidya",
+                "Vikas", "Vishal", "Vivek", "Yash", "Yogesh", "Aarohi", "Abha", "Abhishekh", "Adarsh", "Aditya", "Ajeet", "Akansha", "Alka", "Alok", "Amarnath", "Amarjeet", "Ameena", "Amina", "Amjad",
+                "Anil", "Ankit", "Anu", "Anupama", "Anuradha", "Anushka", "Anuva", "Aparajita", "Archana", "Arvind", "Ashish", "Ashok", "Ashwini", "Asif", "Ayush", "Babu", "Bhagat", "Bhagesh", "Bhairav",
+                "Bhanu", "Bharat", "Bhaskar", "Bimla", "Brajesh", "Chaitanya", "Chanda", "Chandan", "Chandra", "Chetan", "Chhaya", "Darshan", "Deepa", "Deepti", "Dev", "Devi", "Dhiraj", "Diksha", "Ekta",
+                "Gajendra", "Ganesh", "Gautam", "Geetanjali", "Gita", "Gopal", "Gopika", "Govind", "Hansa", "Harini", "Himanshu", "Indira", "Jagdish", "Jagruti", "Jaidev", "Jaya", "Jayant", "Jeevan",
+                "Jitendra", "Jyoti", "Kailash", "Kala", "Kanchan", "Kavita", "Kiran", "Kirti", "Komal", "Krish", "Krishna", "Kumar", "Lata", "Madan", "Madhu", "Mahesh", "Manju", "Manohar", "Meenakshi",
+                "Mihir", "Minakshi", "Mohini", "Monica", "Mukund", "Nalini", "Nandita", "Narayan", "Naveen", "Navin", "Nidhi", "Nikhil", "Nirmala", "Nisha", "Om", "Padmini", "Pallavi", "Parvati", "Priyanka",
+                "Raghav", "Ragini", "Rajeev", "Rajendra", "Rajesh", "Rakesh", "Ram", "Rama", "Rani", "Ravi", "Reena", "Rekha", "Rishi", "Rita", "Ritu", "Rohit", "Roopa", "Sakshi", "Saloni", "Sangeeta",
+                "Sanjay", "Santosh", "Sarita", "Savita", "Seema", "Shailendra", "Shaili", "Shakuntala", "Shanta", "Shanti", "Shekhar", "Shilpa", "Shiv", "Shobha", "Shreya", "Shridhar", "Shyam", "Sima",
+                "Sonal",
+            ];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+
+        function getRandomPlace() {
+            const places = [
+                "New York", "Los Angeles", "Chicago", "San Francisco", "Miami", "Las Vegas", "Seattle", "Boston",
+                "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Lucknow",
+                "Surat", "Kanpur", "Nagpur", "Visakhapatnam", "Indore", "Thane", "Bhopal", "Patna", "Vadodara", "Ghaziabad",
+                "Ludhiana", "Agra", "Nashik", "Faridabad", "Meerut", "Rajkot", "Varanasi", "Srinagar", "Aurangabad", "Dhanbad",
+                "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi", "Howrah", "Coimbatore", "Vijayawada", "Jodhpur", "Madurai",
+                "Raipur", "Kota", "Guwahati", "Chandigarh", "Dehradun", "Noida", "Bhubaneswar", "Gorakhpur", "Cuttack", "Kochi",
+                "Mysore", "Thiruvananthapuram", "Guntur", "Salem", "Warangal", "Tirunelveli", "Jalandhar", "Jamnagar", "Bhilai",
+                "Cuttack", "Bikaner", "Kochi", "Nellore", "Bhavnagar", "Durgapur", "Asansol", "Rourkela", "Ujjain", "Jammu",
+                "Hapur", "Bokaro Steel City", "Mangalore", "Amravati", "Cuddalore", "Kadapa", "Kollam", "Muzaffarpur", "Panihati",
+                "Kurnool", "Rajpur Sonarpur", "Bally", "North Dumdum", "Alwar", "Kakinada", "Dewas", "Nizamabad", "Parbhani",
+                "Bihar Sharif", "Panipat", "Darbhanga", "Bally", "Aizawl", "Ichalkaranji", "Tirupati", "Latur", "Ambattur",
+                "Sagar", "Shivamogga", "Ratlam", "Modinagar", "Ahmednagar", "Arrah", "Chandrapur", "Maheshtala", "Bardhaman",
+                "Hazaribagh", "Naihati", "Kumbakonam", "Bilaspur", "Tinsukia", "Osmanabad", "Nandyal", "Sonipat", "Nagercoil",
+                "Suryapet", "Kulti", "Muzaffarnagar", "Rajahmundry", "Agartala", "Bathinda", "Purnia", "Bellary", "Gandhinagar",
+                "Sikar", "Shimla", "Hosur", "Munger", "Bikaner", "Machilipatnam", "Deoghar", "Hindupur", "Nagaon", "Ongole",
+                "Jaunpur", "Madanapalle", "Haldia", "Shillong", "Lakhimpur", "Ratnagiri", "Hindupur", "Guntakal", "Silchar",
+                "Raniganj", "Mandi", "Hosapete", "Nandyal", "Vellore", "Eluru", "Deoria", "Bathinda", "Karimnagar", "Kottayam",
+                "Malappuram", "Lalitpur", "Etawah", "Sambalpur", "Raayachuru", "Bhuj", "Ichalkaranji", "Tadipatri", "Rajapalayam",
+                "Hassan", "Bhimavaram", "Kolar", "Kumbakonam", "Karaikudi", "Namakkal", "Sagarpur", "Dibrugarh", "Moga",
+                "Suryapet", "Proddatur", "Chittoor", "Khammam", "Ongole", "Gadwal", "Nizamabad", "Orai", "Begusarai",
+                "Kadapa", "Srikakulam", "Dharwad", "Salem", "Durgapur", "Satna", "Chandrapur", "Aurangabad", "Serampore", "Fatehpur",
+                "Machilipatnam", "Khammam", "Haldwani", "Deoghar", "Beawar", "Dibrugarh", "Thiruvottiyur", "Nangloi Jat",
+                "Baranagar", "Purnia", "Sonipat", "Karawal Nagar", "Kulti", "Shimla", "Shahjanpur", "Jalna", "Rampur", "Panvel",
+                "Sirsa", "Katihar", "Tadepallegudem", "Baharampur", "Avadi", "Tiruvannamalai", "Puducherry", "Bilaspur",
+                "Navsari", "Tanjore", "Sambhal", "Kakinada", "Nangloi Jat", "Bihar Sharif", "Lalitpur", "Dharmavaram",
+                "Pithampur", "Kolar", "Mehsana", "Khora", "Amroha", "Ganganagar", "Shahjanpur", "Srikakulam", "Malappuram",
+                "Hardoi", "Mango", "Adilabad", "Vijayanagaram", "Banda", "Vadakara", "Srinagar", "Bikaner", "Kota", "Durg",
+                "Kollam", "Katihar", "Begusarai", "Gandhinagar", "Rourkela", "Alappuzha", "Bharatpur", "Pali", "Barddhaman",
+                "Ghazipur", "Bhiwani", "Mysore", "Bilimora", "Kodar", "Satara", "Serampore", "Navadwip", "Bhavnagar",
+                "Nandyal", "Godhra", "Ratlam", "Ongole", "Bongaon", "Ghatal", "Jangipur", "Kandi", "Baharampur", "Kharagpur",
+                "Chinsurah",
+            ];
+            return places[Math.floor(Math.random() * places.length)];
+        }
+
+        function createToast() {
+            const name = getRandomName();
+            const place = getRandomPlace();
+            const toastContainer = document.getElementById("toast-container");
+
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.innerHTML = `${name} has joined from ${place}`;
+            toastContainer.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add("show");
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                    setTimeout(() => {
+                        toast.remove();
+                    }, 1000);
+                }, 2000);
+            }, 100);
+        }
+
+        function generateRandomInterval() {
+            return Math.floor(Math.random() * 10000) + 1000; // Random interval between 1 to 10 seconds (1000 to 10000 milliseconds)
+        }
+
+        function scheduleRandomToasts() {
+            createToast();
+            setTimeout(scheduleRandomToasts, generateRandomInterval());
+        }
+
+        scheduleRandomToasts();
     </script>
+
 
     <script src="dist/js/main.min.js"></script>
 </body>
