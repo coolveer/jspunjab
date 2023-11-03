@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,58 @@
     <link rel="icon" type="image/x-icon" href="dist/images/JS.png">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .toast {
+            background-color: yellow;
+            color: black;
+            border: 2px solid black;
+            /* Added black border */
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+            animation: toast-fade 2s ease-in-out;
+        }
+
+        @keyframes toast-fade {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .toast.show {
+            display: block;
+            animation: toast-fade 2s ease-in-out;
+        }
+    </style>
 </head>
+
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
         <header class="site-header">
@@ -18,8 +70,8 @@
                     <div class="brand header-brand">
                         <h1 class="m-0">
                             <a href="#">
-								<img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo">
-								<img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                                <img class="header-logo-image asset-light" src="dist/images/logo-light.svg" alt="Logo">
+                                <img class="header-logo-image asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
                             </a>
                         </h1>
                     </div>
@@ -31,80 +83,104 @@
             <section class="hero">
                 <div class="container">
                     <div class="hero-inner">
-						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">JS Punjab</h1>
-	                        <p class="hero-paragraph">JS Punjab is a young community of developers with the motive by the developers for the developers and from developers. <br> <br>
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">JS Punjab</h1>
+                            <p class="hero-paragraph">JS Punjab is a young community of developers with the motive by
+                                the developers for the developers and from developers. <br> <br>
 
-                                A community of developers who are interested in Javascript technologies from the Android, Web, react, node , anguler , vue and Many more.</p>
-	                        <div class="hero-cta">
-								<a class="button button-primary" href="https://forms.gle/irqohqRF4aaYtS3S7">Join us</a>
-								<div class="lights-toggle">
-									<input id="lights-toggle" type="checkbox" name="lights-toggle" class="switch" checked="checked">
-									<label for="lights-toggle" class="text-xs"><span>Turn me <span class="label-text">dark</span></span></label>
-								</div>
-							</div>
-						</div>
-						<div class="hero-media">
-							<div class="header-illustration">
-								<img class="header-illustration-image asset-light" src="dist/images/header-illustration-light.svg" alt="Header illustration">
-								<img class="header-illustration-image asset-dark" src="dist/images/header-illustration-dark.svg" alt="Header illustration">
-							</div>
-							<div class="hero-media-illustration">
-								<img class="hero-media-illustration-image asset-light" src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration">
-								<img class="hero-media-illustration-image asset-dark" src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration">
-							</div>
-							<div class="hero-media-container">
-								<img class="hero-media-image asset-light" src="dist/images/JS.png" alt="Hero media">
-								<img class="hero-media-image asset-dark" src="dist/images/JS.png" alt="Hero media">
-							</div>
-						</div>
+                                A community of developers who are interested in Javascript technologies from the
+                                Android, Web, react, node , anguler , vue and Many more.</p>
+                            <div class="hero-cta">
+                                <a class="button button-primary" href="https://forms.gle/irqohqRF4aaYtS3S7">Join us</a>
+                                <div class="lights-toggle">
+                                    <input id="lights-toggle" type="checkbox" name="lights-toggle" class="switch"
+                                        checked="checked">
+                                    <label for="lights-toggle" class="text-xs"><span>Turn me <span
+                                                class="label-text">dark</span></span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-media">
+                            <div class="header-illustration">
+                                <img class="header-illustration-image asset-light"
+                                    src="dist/images/header-illustration-light.svg" alt="Header illustration">
+                                <img class="header-illustration-image asset-dark"
+                                    src="dist/images/header-illustration-dark.svg" alt="Header illustration">
+                            </div>
+                            <div class="hero-media-illustration">
+                                <img class="hero-media-illustration-image asset-light"
+                                    src="dist/images/hero-media-illustration-light.svg" alt="Hero media illustration">
+                                <img class="hero-media-illustration-image asset-dark"
+                                    src="dist/images/hero-media-illustration-dark.svg" alt="Hero media illustration">
+                            </div>
+                            <div class="hero-media-container">
+                                <img class="hero-media-image asset-light" src="dist/images/JS.png" alt="Hero media">
+                                <img class="hero-media-image asset-dark" src="dist/images/JS.png" alt="Hero media">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="features section">
                 <div class="container">
-					<div class="features-inner section-inner has-bottom-divider">
-						<div class="features-header text-center">
-							<div class="container-sm">
-								<h2 class="section-title mt-0">The Community</h2>
-	                            <p class="section-paragraph">The community prides itself on providing an inclusive environment where all the community members from beginner developers to experienced professionals come together to help each other.</p>
-								<div class="features-image">
-									<img class="features-illustration asset-dark" src="dist/images/features-illustration-dark.svg" alt="Feature illustration">
-									<img class="features-box asset-dark" src="dist/images/JS.png" alt="Feature box">
-									<img class="features-illustration asset-dark" src="dist/images/features-illustration-top-dark.svg" alt="Feature illustration top">
-									<img class="features-illustration asset-light" src="dist/images/features-illustration-light.svg" alt="Feature illustration">
-									<img class="features-box asset-light" src="dist/images/JS.png" alt="Feature box">
-									<img class="features-illustration asset-light" src="dist/images/features-illustration-top-light.svg" alt="Feature illustration top">
-								</div>
-							</div>
+                    <div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-header text-center">
+                            <div class="container-sm">
+                                <h2 class="section-title mt-0">The Community</h2>
+                                <p class="section-paragraph">The community prides itself on providing an inclusive
+                                    environment where all the community members from beginner developers to experienced
+                                    professionals come together to help each other.</p>
+                                <div class="features-image">
+                                    <img class="features-illustration asset-dark"
+                                        src="dist/images/features-illustration-dark.svg" alt="Feature illustration">
+                                    <img class="features-box asset-dark" src="dist/images/JS.png" alt="Feature box">
+                                    <img class="features-illustration asset-dark"
+                                        src="dist/images/features-illustration-top-dark.svg"
+                                        alt="Feature illustration top">
+                                    <img class="features-illustration asset-light"
+                                        src="dist/images/features-illustration-light.svg" alt="Feature illustration">
+                                    <img class="features-box asset-light" src="dist/images/JS.png" alt="Feature box">
+                                    <img class="features-illustration asset-light"
+                                        src="dist/images/features-illustration-top-light.svg"
+                                        alt="Feature illustration top">
+                                </div>
+                            </div>
                         </div>
                         <div class="features-wrap">
                             <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<img class="asset-light" src="dist/images/feature-01-light.svg" alt="Feature 01">
-										<img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Feature 01">
+                                        <img class="asset-light" src="dist/images/feature-01-light.svg"
+                                            alt="Feature 01">
+                                        <img class="asset-dark" src="dist/images/feature-01-dark.svg" alt="Feature 01">
                                     </div>
-									<div class="feature-content">
-                                    	<h3 class="feature-title mt-0">How do we provide support</h3>
-                                    	<p class="text-sm mb-0">You can collaborate with us regardless of the field you're coming from. We'll support you in organizing events, competitions, etc. If interested, mail us at hello@jspunjab.com</p>
-									</div>
-								</div>
+                                    <div class="feature-content">
+                                        <h3 class="feature-title mt-0">How do we provide support</h3>
+                                        <p class="text-sm mb-0">You can collaborate with us regardless of the field
+                                            you're coming from. We'll support you in organizing events, competitions,
+                                            etc. If interested, mail us at hello@jspunjab.com</p>
+                                    </div>
+                                </div>
                             </div>
-							<div class="feature is-revealing">
+                            <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<img class="asset-light" src="dist/images/feature-02-light.svg" alt="Feature 02">
-										<img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Feature 02">
+                                        <img class="asset-light" src="dist/images/feature-02-light.svg"
+                                            alt="Feature 02">
+                                        <img class="asset-dark" src="dist/images/feature-02-dark.svg" alt="Feature 02">
                                     </div>
-									<div class="feature-content">
-                                    	<h3 class="feature-title mt-0">Why join JS Punjab ?</h3>
-                                    	<p class="text-sm mb-0">You’ll get ample opportunities not only to meet the local developers with similar interests in technology but also to share your interest/experience with fellow community folks.Our events include talks and hands on workshops on wide range of technical topics where you can learn new skills.</p>
-									</div>
-								</div>
+                                    <div class="feature-content">
+                                        <h3 class="feature-title mt-0">Why join JS Punjab ?</h3>
+                                        <p class="text-sm mb-0">You’ll get ample opportunities not only to meet the
+                                            local developers with similar interests in technology but also to share your
+                                            interest/experience with fellow community folks.Our events include talks and
+                                            hands on workshops on wide range of technical topics where you can learn new
+                                            skills.</p>
+                                    </div>
+                                </div>
                             </div>
-							<!-- <div class="feature is-revealing">
+                            <!-- <div class="feature is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
 										<img class="asset-light" src="dist/images/feature-03-light.svg" alt="Feature 03">
@@ -121,16 +197,17 @@
                 </div>
             </section>
 
-			<section class="cta section">
+            <section class="cta section">
                 <div class="container-sm">
                     <div class="cta-inner section-inner">
                         <div class="cta-header text-center">
                             <h2 class="section-title mt-0">Get in touch</h2>
                             <p class="section-paragraph">Join us to get all the knowledge and the benefit.</p>
-							<div class="cta-cta">
-								<a class="button button-primary" href="https://forms.gle/irqohqRF4aaYtS3S7">Join us now</a>
-							</div>
-					    </div>
+                            <div class="cta-cta">
+                                <a class="button button-primary" href="https://forms.gle/irqohqRF4aaYtS3S7">Join us
+                                    now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -141,8 +218,8 @@
                 <div class="site-footer-inner">
                     <div class="brand footer-brand">
                         <a href="#">
-							<img class="asset-light" src="dist/images/logo-light.svg" alt="Logo">
-							<img class="asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
+                            <img class="asset-light" src="dist/images/logo-light.svg" alt="Logo">
+                            <img class="asset-dark" src="dist/images/logo-dark.svg" alt="Logo">
                         </a>
                     </div>
                     <!-- <ul class="footer-links list-reset">
@@ -191,6 +268,91 @@
         </footer>
     </div>
 
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        function getRandomName() {
+            const names = [
+                "Aarav", "Aarti", "Abhinav", "Abhishek", "Aditi", "Aditya", "Aishwarya", "Ajay", "Akshay", "Aman", "Ambika", "Amit", "Amrita", "Anand", "Ananya", "Aniket", "Anjali", "Ankita", "Anurag", "Aparna",
+                "Arjun", "Arun", "Asha", "Ashish", "Ashwini", "Asif", "Ayush", "Bhavesh", "Bhuvan", "Chetan", "Chitra", "Deepak", "Disha", "Divya", "Gaurav", "Geeta", "Gopal", "Gouri", "Harish", "Harsha",
+                "Isha", "Jagdish", "Jaya", "Jayesh", "Kajal", "Kalyani", "Kapil", "Karan", "Karishma", "Kavita", "Kiran", "Kirti", "Komal", "Kunal", "Lakshmi", "Madhav", "Madhu", "Manish", "Meera", "Mira",
+                "Mohan", "Monica", "Mukesh", "Nandini", "Naveen", "Neelam", "Neha", "Nikita", "Nisha", "Pankaj", "Parul", "Pooja", "Pradeep", "Pranav", "Prashant", "Priya", "Rahul", "Rajesh", "Rakesh",
+                "Ramesh", "Rashmi", "Ravi", "Rekha", "Renu", "Rishi", "Ritu", "Rupali", "Sachin", "Sangeeta", "Sanjay", "Sarita", "Satish", "Seema", "Shalini", "Shamita", "Shankar", "Shanti", "Shashi",
+                "Shivani", "Shruti", "Shweta", "Siddharth", "Simran", "Sneha", "Sonia", "Suman", "Sunil", "Suresh", "Swati", "Tanvi", "Tarun", "Trisha", "Uday", "Usha", "Varun", "Vasu", "Vicky", "Vidya",
+                "Vikas", "Vishal", "Vivek", "Yash", "Yogesh", "Aarohi", "Abha", "Abhishekh", "Adarsh", "Aditya", "Ajeet", "Akansha", "Alka", "Alok", "Amarnath", "Amarjeet", "Ameena", "Amina", "Amjad",
+                "Anil", "Ankit", "Anu", "Anupama", "Anuradha", "Anushka", "Anuva", "Aparajita", "Archana", "Arvind", "Ashish", "Ashok", "Ashwini", "Asif", "Ayush", "Babu", "Bhagat", "Bhagesh", "Bhairav",
+                "Bhanu", "Bharat", "Bhaskar", "Bimla", "Brajesh", "Chaitanya", "Chanda", "Chandan", "Chandra", "Chetan", "Chhaya", "Darshan", "Deepa", "Deepti", "Dev", "Devi", "Dhiraj", "Diksha", "Ekta",
+                "Gajendra", "Ganesh", "Gautam", "Geetanjali", "Gita", "Gopal", "Gopika", "Govind", "Hansa", "Harini", "Himanshu", "Indira", "Jagdish", "Jagruti", "Jaidev", "Jaya", "Jayant", "Jeevan",
+                "Jitendra", "Jyoti", "Kailash", "Kala", "Kanchan", "Kavita", "Kiran", "Kirti", "Komal", "Krish", "Krishna", "Kumar", "Lata", "Madan", "Madhu", "Mahesh", "Manju", "Manohar", "Meenakshi",
+                "Mihir", "Minakshi", "Mohini", "Monica", "Mukund", "Nalini", "Nandita", "Narayan", "Naveen", "Navin", "Nidhi", "Nikhil", "Nirmala", "Nisha", "Om", "Padmini", "Pallavi", "Parvati", "Priyanka",
+                "Raghav", "Ragini", "Rajeev", "Rajendra", "Rajesh", "Rakesh", "Ram", "Rama", "Rani", "Ravi", "Reena", "Rekha", "Rishi", "Rita", "Ritu", "Rohit", "Roopa", "Sakshi", "Saloni", "Sangeeta",
+                "Sanjay", "Santosh", "Sarita", "Savita", "Seema", "Shailendra", "Shaili", "Shakuntala", "Shanta", "Shanti", "Shekhar", "Shilpa", "Shiv", "Shobha", "Shreya", "Shridhar", "Shyam", "Sima",
+                "Sonal",
+            ];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+
+        function getRandomPlace() {
+            const places = ["New York", "Los Angeles", "Chicago", "San Francisco", "Miami", "Las Vegas", "Seattle", "Boston",
+                "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Lucknow",
+                "Surat", "Kanpur", "Nagpur", "Visakhapatnam", "Indore", "Thane", "Bhopal", "Patna", "Vadodara", "Ghaziabad",
+                "Ludhiana", "Agra", "Nashik", "Faridabad", "Meerut", "Rajkot", "Varanasi", "Srinagar", "Aurangabad", "Dhanbad",
+                "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi", "Howrah", "Coimbatore", "Vijayawada", "Jodhpur", "Madurai",
+                "Raipur", "Kota", "Guwahati", "Chandigarh", "Dehradun", "Noida", "Bhubaneswar", "Gorakhpur", "Cuttack", "Kochi",
+                "Mysore", "Thiruvananthapuram", "Guntur", "Salem", "Warangal", "Tirunelveli", "Jalandhar", "Jamnagar", "Bhilai",
+                "Cuttack", "Bikaner", "Kochi", "Nellore", "Bhavnagar", "Durgapur", "Asansol", "Rourkela", "Ujjain", "Jammu",
+                "Hapur", "Bokaro Steel City", "Mangalore", "Amravati", "Cuddalore", "Kadapa", "Kollam", "Muzaffarpur", "Panihati",
+                "Kurnool", "Rajpur Sonarpur", "Bally", "North Dumdum", "Alwar", "Kakinada", "Dewas", "Nizamabad", "Parbhani",
+                "Bihar Sharif", "Panipat", "Darbhanga", "Bally", "Aizawl", "Ichalkaranji", "Tirupati", "Latur", "Ambattur",
+                "Sagar", "Shivamogga", "Ratlam", "Modinagar", "Ahmednagar", "Arrah", "Chandrapur", "Maheshtala", "Bardhaman",
+                "Hazaribagh", "Naihati", "Kumbakonam", "Bilaspur", "Tinsukia", "Osmanabad", "Nandyal", "Sonipat", "Nagercoil",
+                "Suryapet", "Kulti", "Muzaffarnagar", "Rajahmundry", "Agartala", "Bathinda", "Purnia", "Bellary", "Gandhinagar",
+                "Sikar", "Shimla", "Hosur", "Munger", "Bikaner", "Machilipatnam", "Deoghar", "Hindupur", "Nagaon", "Ongole",
+                "Jaunpur", "Madanapalle", "Haldia", "Shillong", "Lakhimpur", "Ratnagiri", "Hindupur", "Guntakal", "Silchar",
+                "Raniganj", "Mandi", "Hosapete", "Nandyal", "Vellore", "Eluru", "Deoria", "Bathinda", "Karimnagar", "Kottayam",
+                "Malappuram", "Lalitpur", "Etawah", "Sambalpur", "Raayachuru", "Bhuj", "Ichalkaranji", "Tadipatri", "Rajapalayam",
+                "Hassan", "Bhimavaram", "Kolar", "Kumbakonam", "Karaikudi", "Namakkal", "Sagarpur", "Dibrugarh", "Moga",
+                "Suryapet", "Proddatur", "Chittoor", "Khammam", "Ongole", "Gadwal", "Nizamabad", "Orai", "Begusarai",
+                "Kadapa", "Srikakulam", "Dharwad", "Salem", "Durgapur", "Satna", "Chandrapur", "Aurangabad", "Serampore", "Fatehpur",
+                "Machilipatnam", "Khammam", "Haldwani", "Deoghar", "Beawar", "Dibrugarh", "Thiruvottiyur", "Nangloi Jat",
+                "Baranagar", "Purnia", "Sonipat", "Karawal Nagar", "Kulti", "Shimla", "Shahjanpur", "Jalna", "Rampur", "Panvel",
+                "Sirsa", "Katihar", "Tadepallegudem", "Baharampur", "Avadi", "Tiruvannamalai", "Puducherry", "Bilaspur",
+                "Navsari", "Tanjore", "Sambhal", "Kakinada", "Nangloi Jat", "Bihar Sharif", "Lalitpur", "Dharmavaram",
+                "Pithampur", "Kolar", "Mehsana", "Khora", "Amroha", "Ganganagar", "Shahjanpur", "Srikakulam", "Malappuram",
+                "Hardoi", "Mango", "Adilabad", "Vijayanagaram", "Banda", "Vadakara", "Srinagar", "Bikaner", "Kota", "Durg",
+                "Kollam", "Katihar", "Begusarai", "Gandhinagar", "Rourkela", "Alappuzha", "Bharatpur", "Pali", "Barddhaman",
+                "Ghazipur", "Bhiwani", "Mysore", "Bilimora", "Kodar", "Satara", "Serampore", "Navadwip", "Bhavnagar",
+                "Nandyal", "Godhra", "Ratlam", "Ongole", "Bongaon", "Ghatal", "Jangipur", "Kandi", "Baharampur", "Kharagpur",
+                "Chinsurah",];
+            return places[Math.floor(Math.random() * places.length)];
+        }
+
+        function createToast() {
+            const name = getRandomName();
+            const place = getRandomPlace();
+            const toastContainer = document.getElementById("toast-container");
+
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.innerHTML = `${name} has joined from ${place}`;
+            toastContainer.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add("show");
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                    setTimeout(() => {
+                        toast.remove();
+                    }, 1000);
+                }, 2000);
+            }, 100);
+
+        
+        }
+
+        setInterval(createToast, Math.floor(Math.random() * (10000 - 1000 + 1) + 1000));
+
+    </script>
+
     <script src="dist/js/main.min.js"></script>
 </body>
+
 </html>
